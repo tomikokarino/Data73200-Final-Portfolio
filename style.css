@@ -1,0 +1,14 @@
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 24pt;
+    color: #222;
+}
+ 
+p {
+    font-size: 12pt;
+    color: #333;
+}
