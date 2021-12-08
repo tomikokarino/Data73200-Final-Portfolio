@@ -44,8 +44,8 @@ let country = {
 * Using a Promise.all([]), we can load more than one dataset at a time
 * */
 Promise.all([
-    d3.json("../data/world.geo.json"), // data soure: https://geojson-maps.ash.ms/
-    d3.csv("../data/HDI_2019.csv")
+    d3.json("data/world.geo.json"), // data soure: https://geojson-maps.ash.ms/
+    d3.csv("data/HDI_2019.csv")
     ]).then(([geojson, HDI]) => {
     country.geojson = geojson
     country.HDI = HDI
