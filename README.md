@@ -10,8 +10,8 @@ This Final Portofolio was created by Tomiko Karino for the Data 73200 course in 
 ### <a href="Project plan/abstract.md">Abstract</a>
 ### Sketches
 <ul>
-  <li>Early sketch</li>
-  <li>Final sketch</li>
+  <li><a href="project-sketch.pdf">Early sketch</a></li>
+  <li><a href="Project plan/Final project sketch.pdf">Final sketch</a></li>
 </ul>
 
-### Data sources
+### <a href="Project plan/data-sources.md">Data sources</a>
