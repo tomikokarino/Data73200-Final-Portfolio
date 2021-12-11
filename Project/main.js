@@ -9,7 +9,7 @@ const margin = { top: 20, bottom: 50, left: 60, right: 40 };
 
 /* for bar chart */
  const barMargin = {
-  top: 15,
+  top: 20,
   right: 25,
   bottom: 25,
   left: 180
@@ -142,49 +142,47 @@ Promise.all([
       .append("svg")
       .attr("preserveAspectRatio", "xMinYMin meet")
       .attr("viewBox", `0 0 ${barWidth + barMargin.left + barMargin.right} ${barHeight + barMargin.top + barMargin.bottom}`)
-      // .style("margin", "margin.top, 0")
       .style("background-color", "white")
-      // .style("border-style", "solid")
-      // .style("border-width", "2px")
-      // .style("border-color", "turquoise")
+      .style("padding-top", "2%")
 
   // X-axis
   svgBar.append("g")
     .attr("class", "x-axis")
-    .style("transform", `translate(${barMargin.left}px,${barHeight - barMargin.top- 10}px)`)
-    .call(d3.axisBottom(xScale))
+    .style("transform", `translate(${barMargin.left}px,${barMargin.top * 3}px)`)
+    .call(d3.axisTop(xScale))
 
   svgBar.append("text")
-    .attr("transform", "translate(" + (barWidth / 2) + " ," + (barHeight + (barMargin.top * 2)) + ")")
-    .style("text-anchor", "middle")
+    .attr("transform", "translate(" + (barWidth / 2) + " , 20)")
     .text("Human Development Index"); 
   
   // Y-axis
   svgBar.append("g")
     .attr("class", "y-axis")
-    .style("transform", `translate(${barMargin.left}px,0px)`)
+    .style("transform", `translate(${barMargin.left}px,${barMargin.top * 2}px)`)
     .call(d3.axisLeft(yScale))
 
 
-  // Horizontal bar chart 
-  svgBar.selectAll(".bar")
+  // Horizontal bar chart
+  svgBar.append("g")
+    .style("transform", `translate(0px,${barMargin.top * 2}px)`)
+    .selectAll(".bar")
     .data(country.HDI)
     .join("rect")
-    .attr("class", "bar")
-    .attr("y", d => yScale(d.Country))
-    .attr("x", barMargin.left)
-    .attr("height", yScale.bandwidth())
-    .attr("width", d => xScale(d.HDI))
-    .attr("fill", d => colorScaleHDI(d.HDI))
+      .attr("class", "bar")
+      .attr("y", d => yScale(d.Country))
+      .attr("x", barMargin.left)
+      .attr("height", yScale.bandwidth())
+      .attr("width", d => xScale(d.HDI))
+      .attr("fill", d => colorScaleHDI(d.HDI))
     console.log(country.HDI)
 
   svgBar.append("text")
     .text("Human Development Index")
-    .attr("transform", `translate(${barWidth}, 20)`)
+    .attr("transform", `translate(${barWidth}, 85)`)
 
   svgBar.append("g")
     .call(colorLegendHDI)
-    .attr("transform", `translate(${barWidth + (barMargin.right * 5)}, 30)`)
+    .attr("transform", `translate(${barWidth + (barMargin.right * 5)}, 95)`)
    
   
 /*********************************************************************/
@@ -203,6 +201,7 @@ Promise.all([
     // .style("border", "solid")
     .style("background-color", "#c0f7fa")
     .style("padding-top", "1%")
+
 
   hoverBox = d3.select(".hover")
 
@@ -236,13 +235,13 @@ Promise.all([
     .on("mouseout", mouseOut)
     
   svgMapHDI.append("text")
-    .attr("transform", "translate(10, 20)")
+    .attr("transform", `translate(${width - margin.right * 5}, 20)`)
     // .style("text-anchor", "middle")
     .text("Human Development Index"); 
 
   svgMapHDI.append("g")
     .call(colorLegendHDI)
-    .attr("transform", "translate(10, 30)")
+    .attr("transform", `translate(${width - margin.right * 2}, 30)`)
 
 
 
@@ -289,13 +288,13 @@ const HDIGIIcountries = svgMapHDIGII.selectAll("path.country")
 .on("mouseout", mouseOutHDIGII)
 
 svgMapHDIGII.append("text")
-.attr("transform", "translate(10, 20)")
+.attr("transform", `translate(${width - margin.right * 5}, 20)`)
 // .style("text-anchor", "middle")
 .text("Human Development Index"); 
 
 svgMapHDIGII.append("g")
 .call(colorLegendHDI)
-.attr("transform", "translate(10, 30)")
+.attr("transform", `translate(${width - margin.right * 2}, 30)`)
 
 
 /******************************************/
@@ -341,13 +340,13 @@ const HDIinternetcountries = svgMapHDIinternet.selectAll("path.country")
 .on("mouseout", mouseOutHDIInternet)
 
 svgMapHDIinternet.append("text")
-.attr("transform", "translate(10, 20)")
+.attr("transform", `translate(${width - margin.right * 5}, 20)`)
 // .style("text-anchor", "middle")
 .text("Human Development Index"); 
 
 svgMapHDIinternet.append("g")
 .call(colorLegendHDI)
-.attr("transform", "translate(10, 30)")
+.attr("transform", `translate(${width - margin.right * 2}, 30)`)
 
 
 /**********************************************/
@@ -389,13 +388,13 @@ svgMapHDIinternet.append("g")
 
 
   svgMapInternet.append("text")
-  .attr("transform", "translate(10, 20)")
+  .attr("transform", `translate(${width - margin.right * 5.2}, 20)`)
   // .style("text-anchor", "middle")
   .text("Internet Users (% of population)"); 
 
   svgMapInternet.append("g")
   .call(colorLegendInternet)
-  .attr("transform", "translate(10, 30)")
+  .attr("transform", `translate(${width - margin.right * 3}, 30)`)
 
 
 
@@ -437,13 +436,13 @@ svgMapHDIinternet.append("g")
       .on("mouseout", mouseOutGII)
 
   svgMapGII.append("text")
-  .attr("transform", "translate(10, 20)")
+  .attr("transform", `translate(${width - margin.right * 5}, 20)`)
   // .style("text-anchor", "middle")
   .text("Gender Inequality Index"); 
 
   svgMapGII.append("g")
       .call(colorLegendGII)
-      .attr("transform", "translate(10, 30)")
+      .attr("transform", `translate(${width - margin.right * 2}, 30)`)
 
 
 
@@ -457,7 +456,7 @@ svgMapHDIinternet.append("g")
 
   function mouseOver() {
     d3.select(this)
-    .attr("stroke", "#f590c4")
+    .attr("stroke", "#fc4e9a")//#f590c4
     .attr("stroke-width", "4px")
   }
 

@@ -12,7 +12,7 @@
       <h1>Geospatial projections: more than just the coordinates</h1>
     </header>
     <section id="introduction">
-      <p><em><a href="https://whitney.org/exhibitions/jasper-johns" alt="link to the Jasper Johns exhibit on the Whitney website.">Jasper Johns: Mirror/Mind</a></em> is an art exhibition currently on view at Whitney Museum of American Art.
+      <p><em><a href="https://whitney.org/exhibitions/jasper-johns" target="_blank" alt="link to the Jasper Johns exhibit on the Whitney website.">Jasper Johns: Mirror/Mind</a></em> is an art exhibition currently on view at Whitney Museum of American Art.
       It is a retrospective show that chronicles the artist’s career that has spanned for over seven decades.</p>
       <p>During the early years of his career, Johns incorporated objects such as the map of the U.S. and American flag into his paintings. He purposely drew these elements inaccurately by distorting the shapes and sizes of states in the map and by painting the wrong number of stars and stripes in the flag, which caused controversies.  Some criticized Johns for being “unpatriotic” for his intentionally inaccurate rendering of these objects.  The exhibition made me realize that a map is a human construct rather than a faithful representation of our physical world and inspired me to think about the power of map projections as a data visualization tool and how they represent more than just geographical coordinates.</p>
       <p>Projections are a mathematical transformation that takes spherical coordinates (latitude and longitude) and transforms them into an XY coordinate system<sup><a href="#footnote1">1</a></sup>. There are four properties to consider when converting from three to two dimensions: (1) shape, (2) area, (3) distance, and (4) direction<sup><a href="#footnote2">2</a></sup>. At least one of these properties will have to be compromised during the flattening process, since it is impossible to make a two-dimensional visualization that maintains all four properties<sup><a href="#footnote3">3</a></sup>. Therefore, it is not possible to represent our physical world onto a two dimensional surface truly faithfully.  Yet despite this inherent inaccuracy,  maps excel in visualizing certain types of data because it not only portrays geographic data but also signifies the political, economical and cultural relationships that exist among the locations rendered in the projection.  Cartographic projections are not merely a visual representation of our world: it also shapes our perspective of the world we live in.</p>            
@@ -21,7 +21,7 @@
       <p>Here I have taken the Human Development Index (HDI) data, published by the United Nations Development Programme (UNDP), and created a bar chart. It simply lists countries and their Humand Development Index in an ascending order. To visualize the HDI and its ranking by country, a bar chart such as this would suffice. However, no context can be communicated in this infographic.</p>
       <div id="bar-chart-container">
       <div id="bar-chart"></div>
-    </div>
+      </div>
     </section>
     <section id="map-container">
       <p>Now, when I take the same data and create a map projection, it immediately paints a picture that tells more than just the HDI and HDI ranking by country.  </p>
@@ -76,19 +76,19 @@
       <p>The Human Development Index is a complex measurement derived from various inter-related indicators and cannot be fully explained by simply comparing its map projection against maps of other indicators.</p>
       <p>However, when communicating about the HDI data to the general public to gain their understanding of its importance and how it is used, map projections is a far sperior form of visualization than a bar chart.</p>
     </section>
-    <!-- ******* SCRIPTS ****** -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="main.js" type="text/javascript"></script>
-    <!-- Thank you Susie Lu: https://d3-legend.susielu.com/ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script> 
     <footer>
       <div id="footnote">
         <ol>
-          <li><a href="http://web.mit.edu/1.961/fall2001/projections.htm" id="footnote1">http://web.mit.edu/1.961/fall2001/projections.htm</a></li>
-          <li><a href="https://medium.com/nightingale/understanding-map-projections-8b23ecbd2a2f" id="footnote2">https://medium.com/nightingale/understanding-map-projections-8b23ecbd2a2f</a></li>
+          <li><a href="http://web.mit.edu/1.961/fall2001/projections.htm" target="_blank" id="footnote1">http://web.mit.edu/1.961/fall2001/projections.htm</a></li>
+          <li><a href="https://medium.com/nightingale/understanding-map-projections-8b23ecbd2a2f" target="_blank" id="footnote2">https://medium.com/nightingale/understanding-map-projections-8b23ecbd2a2f</a></li>
           <li><a id="footnote3">Ibid.</a></li>
         </ol>
       </div>
     </footer>
+    <!-- ******* SCRIPTS ****** -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="main.js" type="text/javascript"></script>
+    <!-- Color Legend library -- Thank you Susie Lu: https://d3-legend.susielu.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script> 
   </body>
 </html>
