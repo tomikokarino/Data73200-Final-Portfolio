@@ -4,6 +4,7 @@ This Final Portfolio was created by Tomiko Karino for the Data 73200 course in t
 
 ## Final Project
 <a href="Project/index.html" target="_blank">Geospatial projections: more than just the coordinates</a>
+<img src="TomikoKarino-FinalProject-screenshot.png"/>
 
 ## Project Plan
 
