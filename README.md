@@ -1,6 +1,6 @@
-# Data73200 Final Portofolio
+# Tomiko's Final Portfolio
 
-This Final Portofolio was created by Tomiko Karino for the Data 73200 course in the Data Analysis and Visualization program at CUNY Graduate Center in the Fall 2021 semester.
+This Final Portfolio was created by Tomiko Karino for the Data 73200 course in the Data Analysis and Visualization program at CUNY Graduate Center in the Fall 2021 semester.
 
 ## Final Project
 <a href="Project/index.html" target="_blank">Geospatial projections: more than just the coordinates</a>
