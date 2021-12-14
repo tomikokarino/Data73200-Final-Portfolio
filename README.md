@@ -17,4 +17,4 @@ This Final Portfolio was created by Tomiko Karino for the Data 73200 course in t
 
 ### <a href="Project plan/data-sources" target="_blank">Data sources</a>
 
-### Reflection
+### <a href="Project plan/reflection" target="_blank">Reflection</a>
